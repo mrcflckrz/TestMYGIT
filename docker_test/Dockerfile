@@ -1,6 +1,10 @@
 FROM python:3
-WORKDIR /app
+
+WORKDIR /usr/src/app
+
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
+
 COPY . .
-CMD [ "python", "test_my_git.py" ]
+
+CMD [ "python", "./test_my_git.py" ]
